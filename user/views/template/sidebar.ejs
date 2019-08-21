@@ -1,0 +1,34 @@
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav side-nav">
+        <li>
+            <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> ONLINE TEST <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+            <ul id="submenu-1" class="collapse">
+                <% for(let i=0 ; i<ques_sets_number ; i++){%>
+                    <li><a href="/test?id=<%=i+1%>"><i class="fa fa-angle-double-right"></i> TEST <%=i+1%></a></li>
+                <%}%>
+            </ul>
+        </li>
+        <li>
+            <a href="JavaScript:Void(0);" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-star"></i>  NOTES <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+            <ul id="submenu-2" class="collapse">
+                <li><a href="#"><i class="fa fa-angle-double-right"></i> SYMBOLS</a></li>
+                <% for(let i=0 ; i<number_of_pdf_doc ; i++){%>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> PDF DOC <%=i+1%></a></li>
+                <%}%>
+                
+            </ul>
+        </li>
+        <li>
+            <a href="/penalty"><i class="fa fa-fw fa-user-plus"></i> PENALTY </a>
+        </li>
+        <li>
+            <a href="/dl_process"><i class="fa fa-fw fa-paper-plane-o"></i> DL PROCESS</a>
+        </li>
+        <li>
+            <a href="/contact"><i class="fa fa-fw fa fa-question-circle"></i> CONTACT US</a>
+        </li>
+        <li>
+            <a href="/about"><i class="fa fa-fw fa fa-question-circle"></i> ABOUT US</a>
+        </li>
+    </ul>
+</div>
