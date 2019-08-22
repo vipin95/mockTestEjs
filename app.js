@@ -4,7 +4,7 @@ const engine = require('ejs-locals');
 
 const port = process.env.PORT || 5000;
 
-app.use(express.static('./'));
+app.use(express.static('./user/'));
 app.set('views', __dirname + '/user/views');
 
 app.set('view engine', 'ejs');
