@@ -1,34 +1,50 @@
-<div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav side-nav">
-        <li>
-            <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> ONLINE TEST <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-            <ul id="submenu-1" class="collapse">
-                <% for(let i=0 ; i<ques_sets_number ; i++){%>
-                    <li><a href="/test?id=<%=i+1%>"><i class="fa fa-angle-double-right"></i> TEST <%=i+1%></a></li>
-                <%}%>
-            </ul>
-        </li>
-        <li>
-            <a href="JavaScript:Void(0);" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-star"></i>  NOTES <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-            <ul id="submenu-2" class="collapse">
-                <li><a href="#"><i class="fa fa-angle-double-right"></i> SYMBOLS</a></li>
-                <% for(let i=0 ; i<number_of_pdf_doc ; i++){%>
-                        <li><a href="/pdf?id=<%=i+1%>" ><i class="fa fa-angle-double-right"></i> PDF DOC <%=i+1%></a></li>
-                <%}%>
-                
-            </ul>
-        </li>
-        <li>
-            <a href="/penalty"><i class="fa fa-fw fa-user-plus"></i> PENALTY </a>
-        </li>
-        <li>
-            <a href="/dl_process"><i class="fa fa-fw fa-paper-plane-o"></i> DL PROCESS</a>
-        </li>
-        <li>
-            <a href="/contact"><i class="fa fa-fw fa fa-question-circle"></i> CONTACT US</a>
-        </li>
-        <li>
-            <a href="/about"><i class="fa fa-fw fa fa-question-circle"></i> ABOUT US</a>
-        </li>
-    </ul>
-</div>
+<aside class="main-sidebar hidden-print " >
+    <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 2334.88px;"></div>
+    <section class="sidebar" id="sidebar-scroll">
+        <ul class="sidebar-menu">
+            <li class="nav-level">Navigation</li>
+            <li class="active treeview">
+                <a class="waves-effect waves-dark" href="/">
+                    <i class="icon-speedometer"></i><span> Dashboard</span>
+                </a>                
+            </li>
+            <li class="treeview">
+                <a class="waves-effect waves-dark" data-target="#submenu-1" data-toggle="collapse" href="javaScript:void(0)">
+                    <i class="icon-speedometer"></i><span> Online Test</span>
+                </a>
+                <ul id="submenu-1" class="collapse">
+                    <% for(let i=0 ; i<ques_sets_number ; i++){%>
+                        <li><a href="/test?id=<%=i+1%>"><i class="fa fa-angle-double-right"></i> TEST <%=i+1%></a></li>
+                    <%}%>
+                </ul>             
+            </li>
+            <li class="treeview">
+                <a class="waves-effect waves-dark" data-toggle="collapse" data-target="#submenu-2" href="javaScript:void(0)">
+                    <i class="icon-speedometer"></i><span> Notes</span>
+                </a>
+                <ul id="submenu-2" class="collapse">
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> SYMBOLS</a></li>
+                        <% for(let i=0 ; i<number_of_pdf_doc ; i++){%>
+                                <li><a href="/pdf?id=<%=i+1%>" ><i class="fa fa-angle-double-right"></i> PDF DOC <%=i+1%></a></li>
+                        <%}%>
+                        
+                    </ul>                
+            </li>
+            <li class="treeview">
+                <a class="waves-effect waves-dark" href="/penalty">
+                    <i class="icon-speedometer"></i><span> Penalty</span>
+                </a>                
+            </li>
+            <li class="treeview">
+                <a class="waves-effect waves-dark" href="/dl_process">
+                    <i class="icon-speedometer"></i><span> DL Process</span>
+                </a>                
+            </li>
+            <li class="treeview">
+                <a class="waves-effect waves-dark" href="/about">
+                    <i class="icon-speedometer"></i><span> About Us</span>
+                </a>                
+            </li>
+        </ul>
+    </section>
+</aside>

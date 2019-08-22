@@ -1,0 +1,71 @@
+.main-header-top > .navbar{
+    background-color: #4680ff;
+}
+.main-header-top{
+    background-color: #4680ff;
+}
+.sidebar-menu > li.active > a{
+    background-color: #4680ff;
+    margin: 5px 10px !important;
+    border-radius: 5px;
+    padding-left: 6px;
+}
+.p-0{
+    background-color: #4680ff;
+}
+.margin_negative{    
+    padding: 20px;
+    margin-top:-70px;
+}
+.main-header{
+    background-color: #4680ff;
+    padding-bottom: 80px;
+} 
+.main-header .breadcrumb-title a{
+    color: #f9ffff ;
+}
+.main-header h3{
+    font-weight: 400;
+    color: #f9ffff ;
+    margin-bottom: 0px !important;
+}
+.content-wrapper{
+    background-color: #ebeff4;
+}
+.add_padding{
+    padding: 0px 10px;
+}
+.carousel-control-next, .carousel-control-prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 15%;
+    color: #fff;
+    text-align: center;
+    opacity: .5;
+    transition: opacity .15s ease;
+}
+.carousel-control-prev {
+    left: 0;
+}
+.carousel-control-next {
+    right: 0;
+}
+.breadcrumb-arrow .breadcrumb-item + .breadcrumb-item::before {
+    content: "\e844" !important; font-family: FontAwesome;
+    color: #fff;
+}
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+.page-header-title {
+    margin-top: 15px !important;
+}
