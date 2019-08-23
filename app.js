@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const engine = require('ejs-locals');
@@ -10,7 +11,7 @@ app.set('views', __dirname + '/user/views');
 app.set('view engine', 'ejs');
 app.engine('ejs', engine);
 
-const root= require('./user/route/root');
+const root= require('./user/route/root'); // direct path like " /abcd? "
 const test = require('./user/route/test');
 
 app.use('/',root);

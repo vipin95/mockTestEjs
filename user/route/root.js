@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express.Router();
+const helper = require("../../bds/helper");
 
 app.get('/',(req,res)=>{
-    res.render('./root_pages/root_page');
+    let helper_obj = new helper()
+    helper_obj.side_bar_req(res);
 })
 app.get('/about',(req,res)=>{
     res.render('./about_us/about');
