@@ -25,7 +25,7 @@ class helper {
 
         }).catch((error)=>{
             console.log(error);
-            res.render(error,{num_of_test_sets:0,pdf_length:0});
+            res.render(`<h1>${error}</h1>`);
         })
     }
     read_dir(){
