@@ -198,3 +198,33 @@ a.li-a-dd:hover{
     color: #fff;
     background-color: #337ab7;
 }
+.btn.btn-round {
+    border-radius: 2rem;
+}
+.button-page .btn {
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+.button-page .btn {
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+.btn {
+    border-radius: 2px;
+    text-transform: capitalize;
+    font-size: 15px;
+    padding: 10px 19px;
+    cursor: pointer;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #4680ff !important;
+    border-color: #4680ff !important;
+}
+.btn-primary, .btn-primary:focus, .btn-primary:active {
+    background-color: #0062cc !important;
+    border-color: #0062cc !important;
+}
+.mr{
+    margin-top: 20px;
+}
