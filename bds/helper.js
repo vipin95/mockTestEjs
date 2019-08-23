@@ -12,7 +12,7 @@ class helper {
 
     ////////////////////////////////////////// START /////////////////////////////////////////
 
-    side_bar_req(res){
+    side_bar_requirment(res){
         let a={};
         return dbs().then((connection_obj)=>{
             return connection_obj.get_count(a)
@@ -22,7 +22,7 @@ class helper {
         }).then((data)=>{
     
             res.render('./dashboard/dashboard',{num_of_test_sets:num_of_test_sets,pdf_length:data});
-            
+
         }).catch((error)=>{
             console.log(error);
             res.send(`<h1>${error}</h1>`);
@@ -30,7 +30,7 @@ class helper {
     }
     read_dir(){
         return new Promise((resolve,reject)=>{
-            const dir = './user/public/assets/pdf_doc';
+            const dir = process.env.path_of_pad_file;
             fs.readdir(dir, (err, files) => {
                 if(err) reject(err);
 
