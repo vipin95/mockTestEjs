@@ -1,9 +1,9 @@
 <aside class="main-sidebar hidden-print " >
-    <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 2334.88px;"></div>
+    <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 100%;"></div>
     <section class="sidebar" id="sidebar-scroll">
-        <ul class="sidebar-menu">
+        <ul class="sidebar-menu" id="sidebar-menu">
             <li class="nav-level">Navigation</li>
-            <li class="active treeview">
+            <li class="treeview">
                 <a class="waves-effect waves-dark" href="/">
                     <i class="icon-speedometer"></i><span> Dashboard</span>
                 </a>                
@@ -14,18 +14,23 @@
                 </a>
                 <ul id="submenu-1" class="collapse">
                     <% for(let i=0 ; i<ques_sets_number ; i++){%>
-                        <li><a href="/test?id=<%=i+1%>"><i class="fa fa-angle-double-right"></i> TEST <%=i+1%></a></li>
+                        <li class="treeviewLi">
+                            <a href="/test?id=<%=i+1%>" class="waves-effect waves-dark li-a-dd">
+                                <span class="pcoded-mtext">> TEST <%=i+1%></span>
+                            </a>
+                        </li>
                     <%}%>
                 </ul>             
             </li>
             <li class="treeview">
-                <a class="waves-effect waves-dark" data-toggle="collapse" data-target="#submenu-2" href="javaScript:void(0)">
+                <a class="waves-effect waves-dark " data-toggle="collapse" data-target="#submenu-2" href="javaScript:void(0)">
                     <i class="icon-speedometer"></i><span> Notes</span>
                 </a>
+                
                 <ul id="submenu-2" class="collapse">
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> SYMBOLS</a></li>
+                        <li><a href="#" class="li-a-dd"><i class="fa fa-angle-double-right "></i> SYMBOLS</a></li>
                         <% for(let i=0 ; i<number_of_pdf_doc ; i++){%>
-                                <li><a href="/pdf?id=<%=i+1%>" ><i class="fa fa-angle-double-right"></i> PDF DOC <%=i+1%></a></li>
+                                <li><a href="/pdf?id=<%=i+1%>" class="li-a-dd" ><i class="fa fa-angle-double-right"></i> PDF DOC <%=i+1%></a></li>
                         <%}%>
                         
                     </ul>                

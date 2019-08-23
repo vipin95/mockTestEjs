@@ -23,3 +23,28 @@
 <script type="text/javascript" src="assets/js/main.min.js"></script>
 <script type="text/javascript" src="assets/pages/elements.js"></script>
 <script type="text/javascript" src="assets/js/menu.min.js"></script>
+<!-- <script type="text/javascript" src="assets/js/add_active.js"></script> -->
+
+<!-- do active on click -->
+<script>
+    var header = document.getElementById("sidebar-menu");
+    var btns = header.getElementsByClassName("treeview");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+        });
+    }
+</script>
+
+<!-- add parent active on redirect -->
+<script>
+    var path = window.location.href;
+     $('ul li a').each(function() {
+      if (this.href === path) {
+       $(this).parents('li').addClass(' active');
+      }
+     });
+</script>

@@ -39,7 +39,7 @@ $(window).on('load', function() {
         });
     };
 
-    notify('Welcome to Able Admin', 'inverse');
+    notify('Welcome to DL Mock Test', 'inverse');
     $('.loader-bg').fadeOut('slow');
 
 });

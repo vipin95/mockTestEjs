@@ -69,3 +69,26 @@
 .page-header-title {
     margin-top: 15px !important;
 }
+a.li-a-dd {
+    text-decoration: none ;
+    display: block;
+    padding: 10px 41px;
+    border-bottom: 1px solid #ededed;
+    color: #666;
+    margin: 5px 10px !important;
+    border-radius: 5px;
+}
+.treeview a:hover {
+    background: #4680ff;
+    color: #fff;
+    /* background-color: #666;
+    color: white; */
+}
+.sidebar-menu > li > a{
+    margin: 5px 10px !important;
+    border-radius: 5px;
+}
+a.li-a-dd:hover{
+    background-color: #666;
+    color: white;
+}
