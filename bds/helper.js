@@ -25,7 +25,7 @@ class helper {
 
         }).catch((error)=>{
             console.log(error);
-            res.send(`<h1>${error}</h1>`);
+            res.render(error);
         })
     }
     read_dir(){
