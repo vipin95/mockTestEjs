@@ -4,6 +4,7 @@ var Cookies = require('cookies');
 var ObjectId = require('mongodb').ObjectID;
 const fs = require('fs');
 var num_of_test_sets;
+const number_of_questions_in_set = process.env.number_of_questions_in_set;
 
 class helper {
     constructor(){
@@ -17,7 +18,7 @@ class helper {
         return dbs().then((connection_obj)=>{
             return connection_obj.get_count(a)
         }).then((result)=>{
-            num_of_test_sets = parseInt(result/process.env.number_of_questions_in_set);
+            num_of_test_sets = parseInt(result/number_of_questions_in_set);
             return this.read_dir();
         }).then((data)=>{
     
@@ -33,7 +34,8 @@ class helper {
             const dir = process.env.path_of_pad_file;
             fs.readdir(dir, (err, files) => {
                 if(err) reject(err);
-
+                console.log(files);
+                console.log(files.length);
                 let pdf_length = files.length;
                 resolve(pdf_length);
             });
