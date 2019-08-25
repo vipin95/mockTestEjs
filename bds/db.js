@@ -60,7 +60,6 @@ class Database {
         return new Promise((resolve,reject)=>{
             this.connection.collection(Test_Paper_DB_Collections).find(obj).count(function (err, result) {
                 if (err) reject(err);
-                console.log(result+"db");
                 resolve(result);
             })
         })

@@ -18,12 +18,9 @@ class helper {
         return dbs().then((connection_obj)=>{
             return connection_obj.get_count(a)
         }).then((result)=>{
-            console.log(result+"helper1");
             num_of_test_sets = parseInt(result/number_of_questions_in_set);
-            console.log(num_of_test_sets+"helper1");
             return this.read_dir();
         }).then((data)=>{
-            console.log('all data '+num_of_test_sets,data);
             res.render('./dashboard/dashboard',{num_of_test_sets:num_of_test_sets,pdf_length:data});
 
         }).catch((error)=>{
