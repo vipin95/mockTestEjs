@@ -1,4 +1,6 @@
 <% layout('../layout.ejs') %>
+
+<div id="hiddenData" style="display: none"><%= dataStr%></div>
 <div class="content-wrapper">
         <!-- Container-fluid starts -->
        <div class="container-fluid">
@@ -47,10 +49,10 @@
     <div class="media">
         <div class="row">
             <div class="col-md-10">
-                <div class="mr-3" style="font-size: 152%;">Question 1:</div>
+                <div class="mr-3" style="font-size: 152%;">Question : <strong id="questionNumber">1 of 20 </strong></div>
                 <div class="media-body">
                     <h5 class="mt-0"></h5>
-                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                    <p id="question"><%= data[0].question %></p>
                 </div>
             </div>
             <div class="col-md-2">
@@ -68,30 +70,30 @@
                         <div class="funkyradio">
                             <div class="card-header pd-0">
                                 <div class="funkyradio-default">
-                                    <input type="radio" name="radio" id="radio1" checked/>
+                                    <input type="radio" value="0" name="radio" id="radio1" class="radio_button_cls" checked/>
                                     <label for="radio1">
                                         <span>
-                                            <div class="row" hidden>
+                                            <!-- <div class="row" hidden>
                                                 <div class="col-md-8">
-                                                    <span>First Option primary</span>
+                                                    <span class="radio_test">First Option primary</span>
                                                 </div>
                                                 <div class="col-md-4"></div>
-                                            </div>
+                                            </div> -->
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span>First Option primary</span>
+                                                    <span class="radio_test"><%= data[0].option0 %></span>
                                                 </div>
                                             </div>
                                         </span>
                                     </label>
                                 </div>
                                 <div class="funkyradio-primary">
-                                    <input type="radio" name="radio" id="radio2"/>
+                                    <input type="radio" name="radio" class="radio_button_cls" value="1" id="radio2"/>
                                     <label for="radio2">
                                         <span>
                                             <div class="row">
                                                 <div class="col-md-8">
-                                                    <span>Second Option primary</span>
+                                                    <span class="radio_test"><%= data[0].option1 %></span>
                                                 </div>
                                                 <div class="col-md-4"></div>
                                             </div>
@@ -99,12 +101,12 @@
                                     </label>
                                 </div>
                                 <div class="funkyradio-success">
-                                    <input type="radio" name="radio" id="radio3" />
+                                    <input type="radio" name="radio" class="radio_button_cls" value="2" id="radio3" />
                                     <label for="radio3">
                                         <span>
                                             <div class="row">
                                                 <div class="col-md-8">
-                                                    <span>Third Option success</span>
+                                                    <span class="radio_test"><%= data[0].option2 %></span>
                                                 </div>
                                                 <div class="col-md-4"></div>
                                             </div>
@@ -112,12 +114,12 @@
                                     </label>
                                 </div>
                                 <div class="funkyradio-danger">
-                                    <input type="radio" name="radio" id="radio4" />
+                                    <input type="radio" name="radio"  class="radio_button_cls" value="3" id="radio4" />
                                     <label for="radio4">
                                         <span>
                                             <div class="row">
                                                 <div class="col-md-8">
-                                                    <span>Fourth Option danger</span>
+                                                    <span class="radio_test"><%= data[0].option3 %></span>
                                                 </div>
                                                 <div class="col-md-4"></div>
                                             </div>
@@ -129,7 +131,10 @@
                     </div>
                     <div class="row">
                         <div class="col-md-8"></div>
-                        <div class="col-md-4"><button class="btn btn-primary btn-round waves-effect waves-light mr">Primary Button</button></div>
+                        <div class="col-md-4">
+                            <button id="next-btn" class="btn btn-primary btn-round waves-effect waves-light mr" onclick="nextQuestion()"> Next </button>
+                            <button id="success-btn" style="display: none" class="btn btn-success btn-round waves-effect waves-light mr" onclick="nextQuestion()"> success </button>
+                        </div>
                     </div>
                 </div>
             </div>

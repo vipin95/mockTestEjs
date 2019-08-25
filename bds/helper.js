@@ -4,7 +4,7 @@ var Cookies = require('cookies');
 var ObjectId = require('mongodb').ObjectID;
 const fs = require('fs');
 var num_of_test_sets;
-const number_of_questions_in_set = process.env.number_of_questions_in_set;
+const number_of_questions_in_set = parseInt(process.env.number_of_questions_in_set);
 
 class helper {
     constructor(){
@@ -36,6 +36,18 @@ class helper {
                 let pdf_length = files.length;
                 resolve(pdf_length);
             });
+        })
+    }
+    getQuestionsSet(res,test_number){ 
+        let skip = (test_number-1)*10;
+        let obj={};
+        return dbs().then((connection_obj)=>{
+            return connection_obj.getData(obj,skip,number_of_questions_in_set);
+        }).then((result)=>{
+            res.render('./test/test_Q&A',{data:result,dataStr:JSON.stringify(result)});
+        }).catch((error)=>{
+            console.log(error);
+            res.send({statusCode:"0",mess:error.message,sendBy:"e"});
         })
     }
     //////////////////////////////////////////  END  /////////////////////////////////////////
@@ -85,16 +97,6 @@ class helper {
             return connection_obj.updateData(query,set);
         }).then((result)=>{
             res.send({statusCode:"1",mess:"done",sendBy:"u"});
-        }).catch((error)=>{
-            console.log(error);
-            res.send({statusCode:"0",mess:error.message,sendBy:"e"});
-        })
-    }
-    getQuestionsSet(res,obj){    
-        return dbs().then((connection_obj)=>{
-            return connection_obj.getData(obj);
-        }).then((result)=>{
-            res.render('./onlineTest/test.ejs',{data:result,dataStr:JSON.stringify(result)});
         }).catch((error)=>{
             console.log(error);
             res.send({statusCode:"0",mess:error.message,sendBy:"e"});

@@ -2,8 +2,11 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const engine = require('ejs-locals');
+// var bodyParser = require('body-parser');
 
 const port = process.env.PORT || 5000;
+
+// var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.use(express.static('./user/public'));
 app.set('views', __dirname + '/user/views');

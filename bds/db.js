@@ -48,9 +48,9 @@ class Database {
             })
         })
     }
-    getData(obj){
+    getData(obj,skip,number_of_questions_in_set){
         return new Promise((resolve,reject)=>{
-            this.connection.collection(Test_Paper_DB_Collections).find(obj).toArray(function (err, result) {
+            this.connection.collection(Test_Paper_DB_Collections).find(obj, { skip: skip, limit: number_of_questions_in_set }).toArray(function (err, result) {
                 if (err) reject(err);
                 resolve(result);
             })
@@ -64,6 +64,14 @@ class Database {
             })
         })
     }
+    // get_test_data(skip,limit){
+    //     return new Promise((resolve,reject)=>{
+    //         this.connection.collection(Test_Paper_DB_Collections).find().skip(skip).limit(limit).toArray(function(err, result) {
+    //             if (err) reject(err);
+    //             resolve(result);
+    //         })
+    //     })
+    // }
     deleteData(obj){
         return new Promise((resolve,reject)=>{
             this.connection.collection(Test_Paper_DB_Collections).deleteMany(obj,(err, result)=> {
