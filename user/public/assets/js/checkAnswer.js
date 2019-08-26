@@ -23,11 +23,11 @@ function checkAnswer(question,answer,qNumber,data){
                 }else{
                     localStorage.setItem('currect_ans',(parseInt(currectAnsStr)+1));
                 }
-                alert('right answer');
+                // alert('right answer');
             }
             else{
                 obj = {question:question,answer:answer,answerStatus:false};             
-                alert('wrong answer');
+                // alert('wrong answer');
             }
             array.push(obj);
             localStorage.setItem("quizResult", JSON.stringify(array));
