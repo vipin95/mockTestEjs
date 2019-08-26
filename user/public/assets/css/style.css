@@ -229,3 +229,18 @@ a.li-a-dd:hover{
     margin-top: 20px;
     padding: 10px 40px;
 }
+.result-header {
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+.result_message_fail {
+    text-align: center;
+    color: rgba(255, 0, 0, 0.658);
+}
+.container_result {
+    width: 600px;
+    height: 500px;
+    background: rgb(255, 255, 255);
+    margin: 0 auto;
+    border-radius: 5px;
+}
