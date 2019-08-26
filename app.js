@@ -8,7 +8,7 @@ const port = process.env.PORT || 5000;
 
 // var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-app.use(express.static('./user/public'));
+app.use(express.static('./user'));
 app.set('views', __dirname + '/user/views');
 
 app.set('view engine', 'ejs');

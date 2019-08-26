@@ -28,7 +28,7 @@ function nextQuestion(){
         }
     }
     if(qNumber == data.length){
-        window.location.href=`/test/result?Curr_ans=${currect_ans}&path=${window.location.pathname}`;
+        window.location.href=`/test/result?Curr_ans=${currect_ans}`;
     }
     if(qNumber == data.length-1){
         document.getElementById('next-btn').setAttribute("style","display:none")

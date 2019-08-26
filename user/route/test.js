@@ -9,5 +9,14 @@ app.get('/',(req,res)=>{
     let helper_obj = new helper();
     helper_obj.getQuestionsSet(res,test_number);
 })
+app.get('/result',(req,res)=>{
+    let correct_ans_str = req.query.Curr_ans;
+    let correct_ans = parseInt(correct_ans_str);
+    let incorrect_ans = 20-correct_ans;
+
+    let path_str = req.query.path;
+    
+    res.render('./test/result.ejs',{data : { correct : correct_ans, incorrect : incorrect_ans}});
+})
 
 module.exports = app;
