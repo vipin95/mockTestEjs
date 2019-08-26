@@ -229,6 +229,9 @@ a.li-a-dd:hover{
     margin-top: 20px;
     padding: 10px 40px;
 }
+.result_status{
+    text-align: center;
+}
 .result-header {
     padding-top: 15px;
     margin-bottom: 20px;
