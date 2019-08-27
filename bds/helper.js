@@ -19,7 +19,7 @@ class helper {
             return connection_obj.get_count(a)
         }).then((result)=>{
             num_of_test_sets = parseInt(result/number_of_questions_in_set);
-            return this.read_dir();
+            return this.read_dir(process.env.path_of_pad_file);
         }).then((data)=>{
             res.render('./dashboard/dashboard',{num_of_test_sets:num_of_test_sets,pdf_length:data});
 
@@ -28,13 +28,16 @@ class helper {
             res.render(`<h1>${error}</h1>`);
         })
     }
-    read_dir(){
+    read_dir(dir,fileId="null"){
         return new Promise((resolve,reject)=>{
-            let dir = process.env.path_of_pad_file;
+            
             fs.readdir(dir, (err, files) => {
                 if(err) reject(err);
+               
                 let pdf_length = files.length;
+                if(fileId === "null")
                 resolve(pdf_length);
+                else resolve(files[fileId]);
             });
         })
     }
@@ -48,6 +51,13 @@ class helper {
         }).catch((error)=>{
             console.log(error);
             res.send({statusCode:"0",mess:error.message,sendBy:"e"});
+        })
+    }
+    getFileName(dir,fileId,res){
+        return this.read_dir(dir,fileId).then((file_name)=>{
+            res.render('doc/doc_show',{file_name:file_name});
+        }).catch((error)=>{
+            res.send(error);
         })
     }
     //////////////////////////////////////////  END  /////////////////////////////////////////
