@@ -15,5 +15,7 @@ app.get('/result',(req,res)=>{
     
     res.render('./test/result.ejs',{data : { correct : correct_ans, incorrect : incorrect_ans}});
 })
-
+app.get('/symbol',(req,res)=>{
+    res.render('./doc/symbols');
+})
 module.exports = app;
