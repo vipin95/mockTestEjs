@@ -23,7 +23,8 @@ app.get('/abc',(req,res)=>{
     console.log(req.query.email);
     console.log("1");
     var transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: 'smtp.mailtrap.io',
+        port: 2525,
         auth: {
           user: 'mavi.mymail@gmail.com',
           pass: process.env.pass
