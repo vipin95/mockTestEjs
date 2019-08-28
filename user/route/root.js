@@ -23,8 +23,7 @@ app.get('/abc',(req,res)=>{
     console.log(req.query.email);
     console.log("1");
     var smtpTransport = mailer.createTransport("SMTP",{
-        host: 'smtp.gmail.com',
-        port: 587,
+        service: "Gmail",
         auth: {
             user: "sachin.developer47@gmail.com",
             pass: 'sachin@@garg'
