@@ -22,13 +22,23 @@ app.get('/penalty',(req,res)=>{
 app.get('/abc',(req,res)=>{
     console.log(req.query.email);
     console.log("1");
-    var smtpTransport = mailer.createTransport("SMTP",{
-        service: "Gmail",
+
+    let smtpTransport = mailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 587,
         auth: {
-            user: "mavi.mymail@gmail.com",
-            pass: 'Vinaykumar48335*'
+           user: 'sachin.developer47@gmail.com',
+           pass: 'sachin@@garg'
         }
     });
+
+    // var smtpTransport = mailer.createTransport("SMTP",{
+    //     service: "Gmail",
+    //     auth: {
+    //         user: "mavi.mymail@gmail.com",
+    //         pass: 'Vinaykumar48335*'
+    //     }
+    // });
       console.log("2");
       var mail = {
         from: req.query.email,
