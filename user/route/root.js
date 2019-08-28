@@ -25,8 +25,8 @@ app.get('/abc',(req,res)=>{
     var smtpTransport = mailer.createTransport("SMTP",{
         service: "Gmail",
         auth: {
-            user: "sachin.developer47@gmail.com",
-            pass: 'sachin@@garg'
+            user: "mavi.mymail@gmail.com",
+            pass: 'Vinaykumar48335*'
         }
     });
       console.log("2");
