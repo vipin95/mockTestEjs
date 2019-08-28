@@ -20,7 +20,7 @@ app.get('/penalty',(req,res)=>{
     res.render('./penalty/penalty');
 })
 app.get('/abc',(req,res)=>{
-    console.log(req.query.email);
+    console.log(req.query.email+process.env.pass);
     console.log("1");
     var transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -29,7 +29,7 @@ app.get('/abc',(req,res)=>{
           pass: process.env.pass
         }
       });
-      console.log("2");
+      console.log("2"+process.env.pass);
       var mailOptions = {
         from: req.query.email,
         to: 'mavi.mymail@gmail.com',
@@ -45,6 +45,7 @@ app.get('/abc',(req,res)=>{
         }
       });
       console.log("4");
+      res.send("done");
 })
 
 module.exports = app;
