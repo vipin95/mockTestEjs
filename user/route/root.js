@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express.Router();
 const helper = require("../../bds/helper");
-var mailer = require("nodemailer");
+var nodemailer = require("nodemailer");
 
 app.get('/',(req,res)=>{
     let helper_obj = new helper()
