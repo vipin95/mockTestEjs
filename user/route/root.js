@@ -32,33 +32,32 @@ app.get('/abc',(req,res)=>{
     //     }
     // });
 
-    var smtpTransport = mailer.createTransport("SMTP",{
-        service: "Gmail",
+    var transporter = mailer.createTransport({
+        host: 'smtp.pepipost.com',
+        port:25,
         auth: {
-            user: "mavi.mymail@gmail.com",
-            pass: process.env.pass
+          user: 'mavimymail@pepisandbox.com',
+          pass: process.env.pass
         }
-    });
+      });
       console.log("2");
-      var mail = {
-        from: req.query.email,
-        to: "mavi.mymail@gmail.com",
-        subject: "Send Email Using Node.js",
-        text: "Node.js New world for me",
+      var mailOptions = {
+        from: 'mavi.mymail@gmail.com',
+        to: 'sachin.alivenet@gmail.com',
+        subject: 'Sending Email using Node.js',
+        text: 'That was easy!',
         html: "<b>Node.js New world for me</b>"
-    }
+      };
     
       console.log("3");
-      smtpTransport.sendMail(mail, function(error, response){
-        if(error){
-            console.log(error);
-        }else{
-            console.log("Message sent: " + response.message);
+      transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
         }
-    
-        smtpTransport.close();
-        res.send("done");
-    });
+        transporter.close();
+      });
 })
 
 module.exports = app;
