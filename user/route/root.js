@@ -36,14 +36,14 @@ app.get('/abc',(req,res)=>{
         host: 'smtp.pepipost.com',
         port:25,
         auth: {
-          user: 'mavimymail@pepisandbox.com',
-          pass: process.env.pass
+          user: 'mavimymail',
+          pass: "India@123"
         }
       });
       console.log("2");
       var mailOptions = {
-        from: 'mavi.mymail@gmail.com',
-        to: 'sachin.alivenet@gmail.com',
+        from: 'mavimymail@pepisandbox.com',
+        to: 'mavi.mymail@gmail.com',
         subject: 'Sending Email using Node.js',
         text: 'That was easy!',
         html: "<b>Node.js New world for me</b>"
