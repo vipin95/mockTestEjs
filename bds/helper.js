@@ -4,6 +4,7 @@ var Cookies = require('cookies');
 var ObjectId = require('mongodb').ObjectID;
 const fs = require('fs');
 var num_of_test_sets;
+var nodemailer = require("nodemailer");
 const number_of_questions_in_set = parseInt(process.env.number_of_questions_in_set);
 
 class helper {
@@ -59,6 +60,32 @@ class helper {
         }).catch((error)=>{
             res.send(error);
         })
+    }
+    send_mail(req,res){
+        var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: process.env.email,
+          pass: process.env.pass
+        }
+      });
+        var mailOptions = {
+          from: process.env.email,
+          to: req.query.email,
+          subject: req.query.subject,
+          text: req.query.Message,
+          // html: "<h1>mavi g</h1>"
+        };
+      
+        transporter.sendMail(mailOptions, function(error, info){
+          if (error) {
+            console.log(error);
+          } else {
+            console.log('Email sent: ' + info.response);
+          }
+          transporter.close();
+          res.redirect('/');
+        });
     }
     //////////////////////////////////////////  END  /////////////////////////////////////////
     authenticate(req,res,pass,email){
