@@ -34,7 +34,7 @@ app.get('/abc',(req,res)=>{
 
     var transporter = mailer.createTransport({
         host: 'smtp.pepipost.com',
-        port:25,
+        port:25 / 587 / 2525,
         auth: {
           user: 'mavimymail',
           pass: "India@123"
@@ -42,7 +42,7 @@ app.get('/abc',(req,res)=>{
       });
       console.log("2");
       var mailOptions = {
-        from: 'mavimymail@pepisandbox.com',
+        from: 'info@pepisandbox.com',
         to: 'mavi.mymail@gmail.com',
         subject: 'Sending Email using Node.js',
         text: 'That was easy!',
