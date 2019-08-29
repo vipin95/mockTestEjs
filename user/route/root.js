@@ -34,7 +34,7 @@ app.get('/abc',(req,res)=>{
 
     var transporter = mailer.createTransport({
         host: 'smtp.pepipost.com',
-        port:25 / 587 / 2525,
+        port:25 || 587 || 2525,
         auth: {
           user: 'mavimymail',
           pass: "India@123"
