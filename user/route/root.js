@@ -23,27 +23,17 @@ app.get('/abc',(req,res)=>{
     console.log(req.query.email);
     console.log("1");
 
-    // let smtpTransport = mailer.createTransport({
-    //     host: 'smtp.gmail.com',
-    //     port: 587,
-    //     auth: {
-    //        user: 'sachin.developer47@gmail.com',
-    //        pass: 'sachin@@garg'
-    //     }
-    // });
-
-    var transporter = mailer.createTransport({
-        host: 'smtp.pepipost.com',
-        port:25 || 587 || 2525,
-        auth: {
-          user: 'mavimymail',
-          pass: "India@123"
-        }
-      });
+    var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'mavi.mymail@gmail.com',
+    pass: 'Vinaykumar48335*'
+  }
+});
       console.log("2");
       var mailOptions = {
-        from: 'info@pepisandbox.com',
-        to: 'mavi.mymail@gmail.com',
+        from: 'mavi.mymail@gmail.com',
+        to: 'sachin.developer47@gmail.com',
         subject: 'Sending Email using Node.js',
         text: 'That was easy!',
         html: "<b>Node.js New world for me</b>"
