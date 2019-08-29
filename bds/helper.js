@@ -11,7 +11,33 @@ class helper {
     constructor(){
 
     }
-
+    authenticate(req,res,pass,email){
+        pass = parseInt(pass);
+        let obj = {id:email,pass:pass};
+        return dbs().then((connection_obj,err)=>{
+            if(err) console.log(err);
+            return connection_obj.getDataAdmin(obj);
+        }).then((result)=>{
+            if(result.length){
+                jwt.sign({ foo: 'bar' }, process.env.JWT_AUTH_KEY, function(err, token) {
+                    if(err) console.log(err);
+                    try {
+                        var cookies = new Cookies(req, res, { maxAge: 60000 });
+                        cookies.set('token', token); 
+                        res.redirect("/admin/dashboard");
+                        //res.send({statusCode:"1",mess:"successfully login",sendBy:"u"});
+                    } catch (error) {
+                        res.send({statusCode:"0",mess:error.message,sendBy:"e"});
+                    }
+                });
+            }
+            else{
+                res.send({statusCode:"0",mess:"Entered detail are Wrong.",sendBy:"u"});
+            }
+        }).catch((error)=>{
+            res.send({statusCode:"0",mess:error.message,sendBy:"e"});
+        });
+    }
     ////////////////////////////////////////// START /////////////////////////////////////////
 
     side_bar_requirment(res){
@@ -22,7 +48,7 @@ class helper {
             num_of_test_sets = parseInt(result/number_of_questions_in_set);
             return this.read_dir(process.env.path_of_pad_file);
         }).then((data)=>{
-            res.render('./dashboard/dashboard',{num_of_test_sets:num_of_test_sets,pdf_length:data});
+            res.render('user/views/dashboard/dashboard',{num_of_test_sets:num_of_test_sets,pdf_length:data});
 
         }).catch((error)=>{
             console.log(error);
@@ -48,7 +74,7 @@ class helper {
         return dbs().then((connection_obj)=>{
             return connection_obj.getData(obj,skip,number_of_questions_in_set);
         }).then((result)=>{
-            res.render('./test/test_Q&A',{data:result,dataStr:JSON.stringify(result)});
+            res.render('user/views/test/test_Q&A',{data:result,dataStr:JSON.stringify(result)});
         }).catch((error)=>{
             console.log(error);
             res.send({statusCode:"0",mess:error.message,sendBy:"e"});
@@ -56,7 +82,7 @@ class helper {
     }
     getFileName(dir,fileId,res){
         return this.read_dir(dir,fileId).then((file_name)=>{
-            res.render('doc/doc_show',{file_name:file_name});
+            res.render('user/views/doc/doc_show',{file_name:file_name});
         }).catch((error)=>{
             res.send(error);
         })
@@ -88,33 +114,7 @@ class helper {
         });
     }
     //////////////////////////////////////////  END  /////////////////////////////////////////
-    authenticate(req,res,pass,email){
-        pass = parseInt(pass);
-        let obj = {id:email,pass:pass};
-        return dbs().then((connection_obj,err)=>{
-            if(err) console.log(err);
-            return connection_obj.getDataAdmin(obj);
-        }).then((result)=>{
-            if(result.length){
-                jwt.sign({ foo: 'bar' }, process.env.JWT_AUTH_KEY, function(err, token) {
-                    if(err) console.log(err);
-                    try {
-                        var cookies = new Cookies(req, res, { maxAge: 60000 });
-                        cookies.set('token', token); 
-                        // res.redirect("/admin/login");
-                        res.send({statusCode:"1",mess:"successfully login",sendBy:"u"});
-                    } catch (error) {
-                        res.send({statusCode:"0",mess:error.message,sendBy:"e"});
-                    }
-                });
-            }
-            else{
-                res.send({statusCode:"0",mess:"Entered detail are Wrong.",sendBy:"u"});
-            }
-        }).catch((error)=>{
-            res.send({statusCode:"0",mess:error.message,sendBy:"e"});
-        });
-    }
+    
     insertQuestions(res,obj){
         return dbs().then((connection_obj)=>{
             return connection_obj.insertData(obj);
@@ -146,7 +146,7 @@ class helper {
         }).then((result)=>{
             let str = JSON.stringify(result.length/20);
             let set_number = parseInt(str.split('.'));
-            res.render('admin/admin.ejs',{set_number:set_number+1});
+            res.render('user/views/admin/admin.ejs',{set_number:set_number+1});
         }).catch((error)=>{
             console.log(error);
             res.send({statusCode:"0",mess:error.message,sendBy:"e"});
@@ -158,8 +158,8 @@ class helper {
             return connection_obj.getData(obj);
         }).then((result)=>{
             // console.log(result);
-            // res.render('./admin/questions_table.ejs');
-            res.render('./admin/questions_table.ejs',{data:result});
+            // res.render('user/views/admin/questions_table.ejs');
+            res.render('user/views/admin/questions_table.ejs',{data:result});
         }).catch((error)=>{
             console.log(error);
             res.send({statusCode:"0",mess:error.message,sendBy:"e"});

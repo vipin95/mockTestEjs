@@ -1,0 +1,59 @@
+<!-- Required Jqurey -->
+<script src="/public/assets/plugins/Jquery/dist/jquery.min.js"></script>
+<script src="/public/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="/public/assets/plugins/tether/dist/js/tether.min.js"></script>
+
+<!-- Required Fremwork -->
+<script src="/public/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- waves effects.js -->
+<script src="/public/assets/plugins/Waves/waves.min.js"></script>
+
+<!-- Scrollbar JS-->
+<script src="/public/assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+<script src="/public/assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+
+<!--classic JS-->
+<script src="/public/assets/plugins/classie/classie.js"></script>
+
+<!-- notification -->
+<script src="/public/assets/plugins/notification/js/bootstrap-growl.min.js"></script>
+
+<!-- custom js -->
+<script type="text/javascript" src="/public/assets/js/main.min.js"></script>
+<script type="text/javascript" src="/public/assets/pages/elements.js"></script>
+<script type="text/javascript" src="/public/assets/js/menu.min.js"></script>
+<!-- <script type="text/javascript" src="/public/assets/js/add_active.js"></script> -->
+
+<!-- do active on click -->
+<script src="/public/assets/js/nextquestion.js"></script>
+<script src="/public/assets/js/checkAnswer.js"></script>
+<script src="/public/assets/js/result_show_to_user.js"></script>
+
+
+<script>
+    var header = document.getElementById("sidebar-menu");
+    var btns = header.getElementsByClassName("treeview");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+        });
+    }
+</script>
+ 
+
+
+<!-- add parent active on redirect -->
+<script>
+    var path = window.location.href;
+     $('ul li a').each(function() {
+      if (this.href === path) {
+       $(this).parents('li').addClass(' active');
+      }
+     });
+
+     $("#myModal").modal('show');
+</script>

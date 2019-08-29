@@ -255,3 +255,10 @@ li.li_inst {
     margin-top: 20px;
     padding-left: 13px;
 }
+.login-block{
+    margin: 30px auto;
+}
+body[themebg-pattern="theme1"]{
+    background-color: #4680ff;
+    background-image: linear-gradient(rgba(255,255,255,0) 200px, rgba(255,255,255,0.9) 0%)
+}

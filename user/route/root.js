@@ -7,16 +7,16 @@ app.get('/',(req,res)=>{
     helper_obj.side_bar_requirment(res);
 })
 app.get('/about',(req,res)=>{
-    res.render('./about_us/about');
+    res.render('user/views/about_us/about');
 })
 app.get('/contact',(req,res)=>{
-    res.render('./contact_us/contact');
+    res.render('user/views/contact_us/contact');
 })
 app.get('/dl_process',(req,res)=>{
-    res.render('./dl_process/process');
+    res.render('user/views/dl_process/process');
 })
 app.get('/penalty',(req,res)=>{
-    res.render('./penalty/penalty');
+    res.render('user/views/penalty/penalty');
 })
 app.get('/send_mail',(req,res)=>{
     let helper_obj = new helper()
