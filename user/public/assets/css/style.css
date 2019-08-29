@@ -258,7 +258,11 @@ li.li_inst {
 .login-block{
     margin: 30px auto;
 }
-body[themebg-pattern="theme1"]{
+.add_card{	
+  margin: 20px auto 0 auto;
+  max-width: 450px;
+}
+body[themebg-pattern="theme1"] {
     background-color: #4680ff;
-    background-image: linear-gradient(rgba(255,255,255,0) 200px, rgba(255,255,255,0.9) 0%)
+    background-image: linear-gradient(rgba(255,255,255,0) 200px, rgba(255,255,255,0.9) 0%);
 }
