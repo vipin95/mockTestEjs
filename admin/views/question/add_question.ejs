@@ -28,13 +28,13 @@
                         <h1 class="result_status">Add Questions </h1>
                     </div>
                     <div class="card-block">
-                        <form action="/vipin" enctype="multipart/form-data" method="POST">
+                        <form action="/admin/add_question" enctype="multipart/form-data" method="POST">
                             <div class="form-group row">
                                 <div class="col-sm-2">
                                     <h4> Question : </h4>
                                 </div>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control input-add-q-high pd-right-0" name="question" placeholder="Enter Question">
+                                    <input type="text" class="form-control input-add-q-high pd-right-0" name="question" autocomplete="off" placeholder="Enter Question">
                                 </div>
                                 <div class="col-sm-2">
                                         <input type="file" name="questionImg" id="radio44" style="display: none" size="60" >
@@ -50,7 +50,7 @@
                                     <div class="funkyradio">
                                         <div class="card-header pd-left-0 pd-right-0 pd-top-0">
                                             <div class="funkyradio-success">
-                                                <input type="radio" name="Answer" class="radio_button_cls" value="0" id="radio1">
+                                                <input type="radio" name="Answer" class="radio_button_cls" value="1" id="radio1">
                                                 <label for="radio1">
                                                     <span>
                                                         <div class="row">
@@ -58,7 +58,7 @@
                                                                     <span class="radio_test">
                                                                         <div class="row">
                                                                             <div class="col-md-10 pd-right-0">
-                                                                                <input type="text" class="form-control input-add-q-high pd-right-0"  name="option" placeholder="Enter Answer">
+                                                                                <input type="text" class="form-control input-add-q-high pd-right-0"  name="option1" autocomplete="off" placeholder="Enter Answer">
                                                                             </div>
                                                                             <div class="col-md-2 pd-left-0">
                                                                                     <input type="file" name="optionImg1" id="radio11" style="display: none" size="60" >
@@ -78,7 +78,7 @@
                                                 </label>
                                             </div>
                                             <div class="funkyradio-success">
-                                                <input type="radio" name="Answer" class="radio_button_cls" value="1" id="radio2">
+                                                <input type="radio" name="Answer" class="radio_button_cls" value="2" id="radio2">
                                                 <label for="radio2">
                                                     <span>
                                                         <div class="row">
@@ -86,7 +86,7 @@
                                                                     <span class="radio_test">
                                                                         <div class="row">
                                                                             <div class="col-md-10 pd-right-0">
-                                                                                <input type="text" class="form-control input-add-q-high pd-right-0" name="option" placeholder="Enter Answer">
+                                                                                <input type="text" class="form-control input-add-q-high pd-right-0" name="option2" autocomplete="off" placeholder="Enter Answer">
                                                                             </div>
                                                                             <div class="col-md-2 pd-left-0">
                                                                                     <input type="file" name="optionImg2" id="radio22" style="display: none" size="60" >
@@ -106,7 +106,7 @@
                                                 </label>
                                             </div>
                                             <div class="funkyradio-success">
-                                                <input type="radio" name="Answer" class="radio_button_cls" value="2" id="radio3">
+                                                <input type="radio" name="Answer" class="radio_button_cls" value="3" id="radio3">
                                                 <label for="radio3">
                                                     <span>
                                                         <div class="row">
@@ -114,7 +114,7 @@
                                                                     <span class="radio_test">
                                                                         <div class="row">
                                                                             <div class="col-md-10 pd-right-0">
-                                                                                <input type="text" class="form-control input-add-q-high pd-right-0" name="option" placeholder="Enter Answer">
+                                                                                <input type="text" class="form-control input-add-q-high pd-right-0" name="option3"  autocomplete="off" placeholder="Enter Answer">
                                                                             </div>
                                                                             <div class="col-md-2 pd-left-0">
                                                                                     <input type="file" name="optionImg3" id="radio33" style="display: none" size="60" >
@@ -134,7 +134,7 @@
                                                 </label>
                                             </div>
                                             <div class="funkyradio-success">
-                                                    <input type="radio" value="3" name="Answer" id="radio4" class="radio_button_cls" >
+                                                    <input type="radio" value="4" name="Answer" id="radio4" class="radio_button_cls" >
                                                 <label for="radio4">
                                                     <span>
                                                         <div class="row">
@@ -142,7 +142,7 @@
                                                                     <span class="radio_test">
                                                                         <div class="row">
                                                                             <div class="col-md-10 pd-right-0">
-                                                                                <input type="text" class="form-control input-add-q-high pd-right-0" name="option" placeholder="Enter Answer">
+                                                                                <input type="text" class="form-control input-add-q-high pd-right-0" name="option4"  autocomplete="off" placeholder="Enter Answer">
                                                                             </div>
                                                                             <div class="col-md-2 pd-left-0">
                                                                                     <input type="file" name="optionImg4" id="radio44" style="display: none" size="60" >

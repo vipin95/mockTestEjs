@@ -2,6 +2,7 @@ const express = require("express");
 const app = express.Router();
 const helper = require('../../bds/helper');
 const auth = require('../../customModule/adminAuth');
+var formidable = require('formidable');
 
 app.get('/',(req,res)=>{
     res.render('admin/views/login_form/login_form');
@@ -18,6 +19,20 @@ app.get('/dashboard',auth,(req,res)=>{
 })
 app.get('/add',auth,(req,res)=>{
     res.render('admin/views/question/add_question.ejs');
+})
+app.post('/add_question',auth,(req,res)=>{
+    var form = new formidable.IncomingForm();
+    form.parse(req, function (err, fields, files) {
+        // form.on('fileBegin', function (name, file){
+        //     file.path = './data/' + file.name;
+        //     console.log(file.name+'&&&&&&&&&&&&&&&&&&&&&7');
+        // });
+        console.log(fields);
+        console.log('////////////////////////////////////////////////////////////////');
+        console.log(files.length);
+        res.write('File uploaded');
+        res.end();
+      });
 })
 
 module.exports = app;
