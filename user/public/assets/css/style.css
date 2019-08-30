@@ -275,9 +275,21 @@ body[themebg-pattern="theme1"] {
 .pd-right-0{
     padding-right: 0px;
 }
+.pd-top-0{
+    padding-top: 0px;
+}
 .b-r-0{
     border-radius: 0px !important;
 }
 .input-add-q-high{
     height: 44px !important;
+}
+.mr-left-success {
+    margin-left: 85%;
+}
+.mr-bottom-0{
+    margin-bottom: 0px;
+}
+input[type="file"] {
+    display: none;
 }
