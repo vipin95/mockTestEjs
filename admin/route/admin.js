@@ -16,5 +16,8 @@ app.post('/login',(req,res)=>{
 app.get('/dashboard',auth,(req,res)=>{
     res.render('admin/views/dashboard/dashboard.ejs');
 })
+app.get('/add',auth,(req,res)=>{
+    res.render('admin/views/question/add_question.ejs');
+})
 
 module.exports = app;

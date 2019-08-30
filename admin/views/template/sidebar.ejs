@@ -1,47 +1,79 @@
 <aside class="main-sidebar hidden-print " >
     <section class="sidebar" id="sidebar-scroll"><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 100%;"></div>
+        <!-- ///////////////////////////////////////////////////////////////////////////////// -->
+        
+        <div class="">
+            <div class="main-menu-header">
+                <img class="img-menu-user img-radius" src="/public/assets/images/avatar-4.jpg" alt="User-Profile-Image">
+                <div class="user-details">
+                    <p id="more-details">John Doe<i class="feather icon-chevron-down m-l-10"></i></p>
+                </div>
+            </div>
+            <div class="main-menu-content">
+                <ul>
+                    <li class="more-details">
+                        <a href="#">
+                            <i class="feather icon-user"></i>View Profile
+                        </a>
+                        <a href="#!">
+                            <i class="feather icon-settings"></i>Settings
+                        </a>
+                        <a href="auth-normal-sign-in.html">
+                            <i class="feather icon-log-out"></i>Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- //////////////////////////////////////////////////////////////////////////////// -->
+
         <ul class="sidebar-menu" id="sidebar-menu">
             <li class="nav-level">Navigation</li>
             <li class="treeview">
-                <a class="waves-effect waves-dark" href="/">
+                <a class="waves-effect waves-dark" href="/admin/dashboard">
                     <i class="icon-speedometer"></i><span> Dashboard</span>
                 </a>                
             </li>
             <li class="treeview">
                 <a class="waves-effect waves-dark" data-target="#submenu-1" data-toggle="collapse" href="javaScript:void(0)">
-                    <i class="icon-speedometer"></i><span> Online Test</span>
+                    <i class="icon-speedometer"></i><span> Questions</span>
                 </a>
                 <ul id="submenu-1" class="collapse">
                     <li class="treeviewLi">
-                        <a href="/test" class="waves-effect waves-dark li-a-dd">
-                            <span class="pcoded-mtext">> TEST </span>
+                        <a href="/admin/add" class="waves-effect waves-dark li-a-dd">
+                            <span class="pcoded-mtext"> > Add Questions </span>
+                        </a>
+                    </li>
+                    <li class="treeviewLi">
+                        <a href="javaScript:void(0)" class="waves-effect waves-dark li-a-dd">
+                            <span class="pcoded-mtext"> > Show Questions </span>
                         </a>
                     </li>
                 </ul>             
             </li>
             <li class="treeview">
                 <a class="waves-effect waves-dark " data-toggle="collapse" data-target="#submenu-2" href="javaScript:void(0)">
-                    <i class="icon-speedometer"></i><span> Notes</span>
+                    <i class="icon-speedometer"></i><span> PDF </span>
                 </a>
                 
                 <ul id="submenu-2" class="collapse">
-                        <li><a href="/test/symbol" class="li-a-dd"><i class="fa fa-angle-double-right "></i> SYMBOLS</a></li>
-                        <li><a href="/doc" class="li-a-dd" ><i class="fa fa-angle-double-right"></i> PDF DOC </a></li>
-                        
-                    </ul>                
+                        <li><a href="javaScript:void(0)" class="li-a-dd"><i class="fa fa-angle-double-right "></i> > Upload PDF </a></li>
+                        <li><a href="javaScript:void(0)" class="li-a-dd" ><i class="fa fa-angle-double-right"></i> > Show PDF  </a></li>  
+                </ul>                
             </li>
             <li class="treeview">
-                <a class="waves-effect waves-dark" href="/penalty">
-                    <i class="icon-speedometer"></i><span> Penalty</span>
-                </a>                
+                <a class="waves-effect waves-dark " data-toggle="collapse" data-target="#submenu-3" href="javaScript:void(0)">
+                    <i class="icon-speedometer"></i><span> GUI </span>
+                </a>
+                
+                <ul id="submenu-3" class="collapse">
+                        <li><a href="javaScript:void(0)" class="li-a-dd"><i class="fa fa-angle-double-right "></i> > Dashboard </a></li>
+                        <li><a href="javaScript:void(0)" class="li-a-dd" ><i class="fa fa-angle-double-right"></i> > About </a></li>  
+                </ul>                
             </li>
             <li class="treeview">
-                <a class="waves-effect waves-dark" href="/dl_process">
-                    <i class="icon-speedometer"></i><span> DL Process</span>
-                </a>                
-            </li>
-            <li class="treeview">
-                <a class="waves-effect waves-dark" href="/about">
+                <a class="waves-effect waves-dark" href="javaScript:void(0)">
                     <i class="icon-speedometer"></i><span> About Us</span>
                 </a>                
             </li>
