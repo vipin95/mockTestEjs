@@ -23,8 +23,8 @@ File: main.css
 	- Responsive media class
 
 ============= */
-@import url("../plugins/Waves/waves.min.css");
-@import url("../plugins/notification/css/animate.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.6/waves.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css");
 @import url("../plugins/notification/css/notification.css");
 @import url("../plugins/search/css/component.css");
 @import url("generic-class.min.css");
