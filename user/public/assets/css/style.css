@@ -266,3 +266,9 @@ body[themebg-pattern="theme1"] {
     background-color: #4680ff;
     background-image: linear-gradient(rgba(255,255,255,0) 200px, rgba(255,255,255,0.9) 0%);
 }
+.card-block{
+    padding: 10px 20px;
+}
+.pd-left-0{
+    padding-left: 0px;
+}
