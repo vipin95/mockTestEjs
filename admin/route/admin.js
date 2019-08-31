@@ -3,6 +3,7 @@ const app = express.Router();
 const helper = require('../../bds/helper');
 const auth = require('../../customModule/adminAuth');
 var formidable = require('formidable');
+var fs = require('fs');
 
 app.get('/',(req,res)=>{
     res.render('admin/views/login_form/login_form');
@@ -23,15 +24,26 @@ app.get('/add',auth,(req,res)=>{
 app.post('/add_question',auth,(req,res)=>{
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
-        // form.on('fileBegin', function (name, file){
-        //     file.path = './data/' + file.name;
-        //     console.log(file.name+'&&&&&&&&&&&&&&&&&&&&&7');
-        // });
-        console.log(fields);
-        console.log('////////////////////////////////////////////////////////////////');
-        console.log(files.length);
-        res.write('File uploaded');
-        res.end();
+        
+        var hrTime = process.hrtime()
+        
+        for(let i=1 ; i<6 ; i++ ){
+            let img = "img"+i;
+
+            if(files[img].name){
+
+                let name = parseInt((hrTime[0] * 1000000 + hrTime[1] / 1000)+(Math.random())*1000);
+                fields[]
+                fs.rename(files[img].path, './'+name, function (err) {
+                    if (err) throw err;
+                    res.send('done');
+                });    
+            }
+        }
+        // console.log(k); 
+        // console.log(fields);
+        // console.log('////////////////////////////////////////////////////////////////');
+        // console.log(files);
       });
 })
 

@@ -8,13 +8,13 @@
             <div class="col-sm-12 p-0">
                 <div class="main-header" style="margin-top: 0px;">
                         <div class="page-header-title">
-                            <h3 class="m-b-10">Penalty</h3>
+                            <h3 class="m-b-10">Questions operation</h3>
                         </div>
                     <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
                         <li class="breadcrumb-item"><a href="index.html"><i class="icofont icofont-home"></i></a>
                         </li>
                         <li class="breadcrumb-item"><a href="/">
-                                <spam style="color: #fff;">Penalty</spam></a>
+                                <spam style="color: #fff;">Add questions</spam></a>
                         </li>
                     </ol>
                 </div>
@@ -33,12 +33,15 @@
                                 <div class="col-sm-2">
                                     <h4> Question : </h4>
                                 </div>
-                                <div class="col-sm-8">
+                                <div class="col-sm-6 pd-right-0">
                                     <input type="text" class="form-control input-add-q-high pd-right-0" name="question" autocomplete="off" placeholder="Enter Question">
                                 </div>
-                                <div class="col-sm-2">
-                                        <input type="file" name="questionImg" id="radio44" style="display: none" size="60" >
-                                        <label for="radio44" class="btn btn-primary btn-round waves-effect waves-light b-r-0 mr-bottom-0"> upload img</label>
+                                <div class="col-sm-1 pd-left-0 pd-right-0">
+                                        <input type="file" name="img1" id="radio-ques" onchange="printImg('radio-ques','img-div-ques')" style="display: none" size="60" >
+                                        <label for="radio-ques" class="btn btn-primary btn-round waves-effect waves-light b-r-0 mr-bottom-0"> img</label>
+                                </div>
+                                <div class="col-md-3 pd-left-0 pd-right-0" id="img-div-ques">
+
                                 </div>
                             </div>
                             <hr/>
@@ -57,12 +60,15 @@
                                                             <div class="col-md-12">
                                                                     <span class="radio_test">
                                                                         <div class="row">
-                                                                            <div class="col-md-10 pd-right-0">
+                                                                            <div class="col-md-7 pd-right-0">
                                                                                 <input type="text" class="form-control input-add-q-high pd-right-0"  name="option1" autocomplete="off" placeholder="Enter Answer">
                                                                             </div>
                                                                             <div class="col-md-2 pd-left-0">
-                                                                                    <input type="file" name="optionImg1" id="radio11" style="display: none" size="60" >
+                                                                                    <input type="file" name="img2" onchange="printImg('radio11','img-div-ans1')" id="radio11" style="display: none" size="60" >
                                                                                     <label for="radio11" class="btn btn-primary btn-round waves-effect waves-light b-r-0 mr-bottom-0"> upload img</label>
+                                                                            </div>
+                                                                            <div class="col-md-3 pd-left-0" id="img-div-ans1">
+
                                                                             </div>
                                                                         </div>
                                                                     </span>
@@ -85,12 +91,15 @@
                                                             <div class="col-md-12">
                                                                     <span class="radio_test">
                                                                         <div class="row">
-                                                                            <div class="col-md-10 pd-right-0">
+                                                                            <div class="col-md-7 pd-right-0">
                                                                                 <input type="text" class="form-control input-add-q-high pd-right-0" name="option2" autocomplete="off" placeholder="Enter Answer">
                                                                             </div>
                                                                             <div class="col-md-2 pd-left-0">
-                                                                                    <input type="file" name="optionImg2" id="radio22" style="display: none" size="60" >
+                                                                                    <input type="file" name="img3" id="radio22" onchange="printImg('radio22','img-div-ans2')" style="display: none" size="60" >
                                                                                     <label for="radio22" class="btn btn-primary btn-round waves-effect waves-light b-r-0 mr-bottom-0"> upload img</label>
+                                                                            </div>
+                                                                            <div class="col-md-3 pd-left-0" id="img-div-ans2">
+
                                                                             </div>
                                                                         </div>
                                                                     </span>
@@ -113,12 +122,15 @@
                                                             <div class="col-md-12">
                                                                     <span class="radio_test">
                                                                         <div class="row">
-                                                                            <div class="col-md-10 pd-right-0">
+                                                                            <div class="col-md-7 pd-right-0">
                                                                                 <input type="text" class="form-control input-add-q-high pd-right-0" name="option3"  autocomplete="off" placeholder="Enter Answer">
                                                                             </div>
                                                                             <div class="col-md-2 pd-left-0">
-                                                                                    <input type="file" name="optionImg3" id="radio33" style="display: none" size="60" >
+                                                                                    <input type="file" name="img4" id="radio33" onchange="printImg('radio33','img-div-ans3')" style="display: none" size="60" >
                                                                                     <label for="radio33" class="btn btn-primary btn-round waves-effect waves-light b-r-0 mr-bottom-0"> upload img</label>
+                                                                            </div>
+                                                                            <div class="col-md-3 pd-left-0" id="img-div-ans3">
+
                                                                             </div>
                                                                         </div>
                                                                     </span>
@@ -141,13 +153,16 @@
                                                             <div class="col-md-12">
                                                                     <span class="radio_test">
                                                                         <div class="row">
-                                                                            <div class="col-md-10 pd-right-0">
+                                                                            <div class="col-md-7 pd-right-0">
                                                                                 <input type="text" class="form-control input-add-q-high pd-right-0" name="option4"  autocomplete="off" placeholder="Enter Answer">
                                                                             </div>
                                                                             <div class="col-md-2 pd-left-0">
-                                                                                    <input type="file" name="optionImg4" id="radio44" style="display: none" size="60" >
+                                                                                    <input type="file" name="img5" id="radio44" onchange="printImg('radio44','img-div-ans4')" style="display: none" size="60" >
                                                                                 <label for="radio44" class="btn btn-primary btn-round waves-effect waves-light b-r-0 mr-bottom-0"> upload img</label>
                                                                                 <!-- <button class="btn btn-primary btn-round waves-effect waves-light b-r-0">upload img</button> -->
+                                                                            </div>
+                                                                            <div class="col-md-3 pd-left-0" id="img-div-ans4">
+
                                                                             </div>
                                                                         </div>
                                                                     </span>
@@ -164,7 +179,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-success mr-left-success">Success</button>
+                                    <button type="submit" class="btn btn-success mr-left-success">Submit</button>
                                 </div>
                             </div>
                         </form>
