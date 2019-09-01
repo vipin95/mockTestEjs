@@ -113,18 +113,18 @@ class helper {
           res.redirect('/');
         });
     }
-    //////////////////////////////////////////  END  /////////////////////////////////////////
-    
     insertQuestions(res,obj){
         return dbs().then((connection_obj)=>{
             return connection_obj.insertData(obj);
         }).then((result)=>{
-            res.send({statusCode:"1",mess:"done",sendBy:"u"});
+            res.redirect('/admin/add');
         }).catch((error)=>{
             console.log(error);
             res.send({statusCode:"0",mess:error.message,sendBy:"e"});
         })
     }
+    //////////////////////////////////////////  END  /////////////////////////////////////////
+    
     edit_questions(res,obj){
         let query = {_id:ObjectId(obj._id)};
         let remove_id = {"question":obj.question ,"option0":obj.option0 ,"option1":obj.option1 ,"option2":obj.option2 ,"option3":obj.option3 ,"answer":obj.answer}

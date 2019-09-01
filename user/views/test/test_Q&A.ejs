@@ -47,19 +47,33 @@
                                                         <!-- Input Validation card start -->
 <div class="card">
     <div class="card-block">
-    <div class="media">
-        <div class="row">
-            <div class="col-md-10">
-                <div class="mr-3" style="font-size: 152%;">Question : <strong id="questionNumber">1 of 20 </strong></div>
-                <div class="media-body">
-                    <h5 class="mt-0"></h5>
-                    <p id="question"><%= data[0].question %></p>
+    <div class="media" id="test_question" >
+        <% if(data[0].ques_image){%>
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="mr-3" style="font-size: 152%;">Question : <strong id="questionNumber">1 of 20 </strong></div>
+                    <div class="media-body">
+                        <h5 class="mt-0"></h5>
+                        <p id="question"><%= data[0].question %></p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <img src="public/assets/question_ans_img/<%=data[0].ques_image_name%>" alt="dkjdfk">
                 </div>
             </div>
-            <div class="col-md-2">
-                <img src="https://tineye.com/images/widgets/mona.jpg" alt="dkjdfk">
+        <% } else{%>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mr-3" style="font-size: 152%;">Question : <strong id="questionNumber">1 of 20 </strong></div>
+                    <div class="media-body">
+                        <h5 class="mt-0"></h5>
+                        <div class="card-block">
+                            <p id="question"><%= data[0].question %></p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        <%}%>
     </div>
 </div>
     <div class="card-header pd-0">
@@ -82,7 +96,7 @@
                                             </div> -->
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span class="radio_test"><%= data[0].option0 %></span>
+                                                    <span class="radio_test"><%= data[0].option1 %></span>
                                                 </div>
                                             </div>
                                         </span>
@@ -94,7 +108,7 @@
                                         <span>
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span class="radio_test"><%= data[0].option1 %></span>
+                                                    <span class="radio_test"><%= data[0].option2 %></span>
                                                 </div>
                                             </div>
                                             <!-- <div class="row">
@@ -112,7 +126,7 @@
                                         <span>
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span class="radio_test"><%= data[0].option2 %></span>
+                                                    <span class="radio_test"><%= data[0].option3 %></span>
                                                 </div>
                                             </div>
                                             <!-- <div class="row">
@@ -130,7 +144,7 @@
                                         <span>
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <span class="radio_test"><%= data[0].option3 %></span>
+                                                    <span class="radio_test"><%= data[0].option4 %></span>
                                                 </div>
                                             </div>
                                             <!-- <div class="row">

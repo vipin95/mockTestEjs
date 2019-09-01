@@ -293,3 +293,6 @@ body[themebg-pattern="theme1"] {
 input[type="file"] {
     display: none;
 }
+p#question {
+    font-size: 18px;
+}

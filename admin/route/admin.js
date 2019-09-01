@@ -26,25 +26,36 @@ app.post('/add_question',auth,(req,res)=>{
     form.parse(req, function (err, fields, files) {
         
         var hrTime = process.hrtime()
-        
+        let status =1;
         for(let i=1 ; i<6 ; i++ ){
             let img = "img"+i;
-
             if(files[img].name){
-
+                status =0;
                 let name = parseInt((hrTime[0] * 1000000 + hrTime[1] / 1000)+(Math.random())*1000);
-                fields[]
-                fs.rename(files[img].path, './'+name, function (err) {
+                if(img === "img1"){
+                    fields["ques_image"] = true;
+                    fields["ans_image"] = false;
+                    fields["ques_image_name"] = name;
+                }
+                else if(img != "img1"){
+                    fields["ques_image"] = false;
+                    fields["ans_image"] = true;
+                    fields["ans_image_name_"+i] = name;
+                }
+                
+                fs.rename(files[img].path, './user/public/assets/question_ans_img/'+name, function (err) {
                     if (err) throw err;
-                    res.send('done');
+                    console.log("file uploaded");
                 });    
             }
+            if(status && i==5){
+                fields["ques_image"] = false;
+                fields["ans_image"] = false;
+            }
         }
-        // console.log(k); 
-        // console.log(fields);
-        // console.log('////////////////////////////////////////////////////////////////');
-        // console.log(files);
-      });
+        let helper_obj = new helper();
+        helper_obj.insertQuestions(res,fields);
+    });
 })
 
 module.exports = app;
