@@ -110,7 +110,7 @@ class helper {
             console.log('Email sent: ' + info.response);
           }
           transporter.close();
-          res.redirect('/');
+          res.render('user/views/contact_us/contact',{data:true});
         });
     }
     insertQuestions(res,obj){

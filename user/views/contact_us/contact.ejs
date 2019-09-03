@@ -31,6 +31,20 @@
                                 
                                 <div class="auth-box card">
                                     <div class="card-block">
+                                        <div class="alert alert-success" id="message" style="display: none" role="alert">
+                                            <h5 style="text-align: center;">Thanks for contacting to us !</h5>
+                                        </div>
+                                        <% if(data){ %>
+                                            <script>
+                                                function clal(){
+                                                    document.getElementById('message').setAttribute("style","display: block");
+                                                    setTimeout(() => {
+                                                        document.getElementById('message').setAttribute("style","display: none");
+                                                    }, 3000);
+                                                }    
+                                                clal();
+                                            </script>
+                                        <%}%> 
                                         <div class="row m-b-20">
                                             <div class="col-md-12">
                                                 <h3 class="text-center">Contact Us</h3>
@@ -89,3 +103,11 @@
         <!-- Container-fluid ends -->
      </div>
     </div>
+    <script>
+        function myFunction(){
+            document.getElementById('message').setAttribute('display','block');
+            setTimeout(() => {
+                document.getElementById('message').setAttribute('display','none');
+            }, 2000);
+        }
+    </script>

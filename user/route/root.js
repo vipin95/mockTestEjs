@@ -10,7 +10,7 @@ app.get('/about',(req,res)=>{
     res.render('user/views/about_us/about');
 })
 app.get('/contact',(req,res)=>{
-    res.render('user/views/contact_us/contact');
+    res.render('user/views/contact_us/contact',{data:0});
 })
 app.get('/dl_process',(req,res)=>{
     res.render('user/views/dl_process/process');
