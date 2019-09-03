@@ -48,7 +48,6 @@
 <div class="card">
     <div class="card-block">
     <div class="media" id="test_question" >
-        <% if(data[0].ques_image){%>
             <div class="row">
                 <div class="col-md-10">
                     <div class="mr-3" style="font-size: 152%;">Question : <strong id="questionNumber">1 of 20 </strong></div>
@@ -58,22 +57,9 @@
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <img src="public/assets/question_ans_img/<%=data[0].ques_image_name%>" alt="dkjdfk">
+                    <img src="public/assets/question_ans_img/<%=data[0].ques_image_name%>" id="img_ques" alt="">
                 </div>
             </div>
-        <% } else{%>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="mr-3" style="font-size: 152%;">Question : <strong id="questionNumber">1 of 20 </strong></div>
-                    <div class="media-body">
-                        <h5 class="mt-0"></h5>
-                        <div class="card-block">
-                            <p id="question"><%= data[0].question %></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <%}%>
     </div>
 </div>
     <div class="card-header pd-0">
