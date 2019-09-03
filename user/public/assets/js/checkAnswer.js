@@ -14,10 +14,10 @@ function checkAnswer(question,answer,qNumber,data){
     }
     for(let i=0 ; i<data.length ; i++){
         if(qNumber == i+1){
-            console.log(data[i].answer+"----------"+answer);
+            
             if(data[i].answer == answer){
                 
-                obj = {question:question,answer:answer,answerStatus:true};
+                obj = {question:question,choosed:answer,answerStatus:true,answer:data[i].answer};
                 
                 if( currectAnsStr == 0 ){
                     
@@ -30,7 +30,7 @@ function checkAnswer(question,answer,qNumber,data){
             }
             else{
                 
-                obj = {question:question,answer:answer,answerStatus:false};             
+                obj = {question:question,choosed:answer,answerStatus:false,answer:data[i].answer};            
                 alert('wrong answer');
             }
             array.push(obj);

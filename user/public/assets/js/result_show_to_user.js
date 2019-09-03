@@ -7,7 +7,7 @@ function result_show_to_user(){
     for (let index = 0; index < data.length; index++) {
         if(data[index].answerStatus)
         html += `<li class="display-1" style='display:block;font-size:17px;margin-bottom:10px' ><strong>Question ${index+1} : </strong>${data[index].question}<p style="color:green">Answer : ${data[index].answer}</p></li>`;
-        else html += `<li <li class="display-1" style='display:block;font-size:17px;margin-bottom:10px' ><strong>Question ${index+1} : </strong>${data[index].question}<p style="color:red">Answer : ${data[index].answer}</p></li>`;
+        else html += `<li <li class="display-1" style='display:block;font-size:17px;margin-bottom:10px' ><strong>Question ${index+1} : </strong>${data[index].question}<p style="color:red">Choosed : ${data[index].choosed}</p><p style="color:green"> Answer : ${data[index].answer}</p></li>`;
     }
     html += "</ul></div>";
     document.querySelector('#content').innerHTML =html;

@@ -296,3 +296,6 @@ input[type="file"] {
 p#question {
     font-size: 18px;
 }
+#modal-dialog{
+    max-width: 1000px !important;
+}
