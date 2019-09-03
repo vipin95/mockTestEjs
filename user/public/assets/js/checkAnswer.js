@@ -14,20 +14,24 @@ function checkAnswer(question,answer,qNumber,data){
     }
     for(let i=0 ; i<data.length ; i++){
         if(qNumber == i+1){
+            console.log(data[i].answer+"----------"+answer);
             if(data[i].answer == answer){
+                
                 obj = {question:question,answer:answer,answerStatus:true};
                 
                 if( currectAnsStr == 0 ){
-
+                    
                     localStorage.setItem('currect_ans','1');
                 }else{
+                    
                     localStorage.setItem('currect_ans',(parseInt(currectAnsStr)+1));
                 }
-                // alert('right answer');
+                alert('right answer');
             }
             else{
+                
                 obj = {question:question,answer:answer,answerStatus:false};             
-                // alert('wrong answer');
+                alert('wrong answer');
             }
             array.push(obj);
             localStorage.setItem("quizResult", JSON.stringify(array));

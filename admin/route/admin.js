@@ -53,8 +53,9 @@ app.post('/add_question',auth,(req,res)=>{
                 fields["ans_image"] = false;
             }
         }
-        let helper_obj = new helper();
-        helper_obj.insertQuestions(res,fields);
+        res.send(fields);
+        // let helper_obj = new helper();
+        // helper_obj.insertQuestions(res,fields);
     });
 })
 

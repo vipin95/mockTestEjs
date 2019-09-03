@@ -13,7 +13,7 @@ function nextQuestion(){
     }
     let datastr = document.getElementById('hiddenData').innerHTML;
     let data = JSON.parse(datastr)
-    let nextQuestion = qNumber+1+" of 20";
+    let nextQuestion = qNumber+1;
     
     document.getElementById('radio1').checked=true;
     console.log(document.getElementById("img_ques").src);

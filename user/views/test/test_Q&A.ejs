@@ -47,7 +47,22 @@
                                                         <!-- Input Validation card start -->
 <div class="card">
     <div class="card-block">
-    <div class="media" id="test_question" >
+            <div class="row">
+                    <div class="col-md-9">
+            <div class="media p-3"  id="test_question">
+                   <strong class="mr-3">Question <span id="questionNumber">1</span> : </strong>
+                    <div class="media-body">
+                      <p id="question"><%= data[0].question %></p>
+                     
+                    </div>
+                  </div>
+    </div>
+
+    <div class="col-md-3">
+            <img src="public/assets/question_ans_img/<%=data[0].ques_image_name%>" id="img_ques" alt="">
+        </div>
+    </div>
+    <!-- <div class="media" id="test_question" >
             <div class="row">
                 <div class="col-md-10">
                     <div class="mr-3" style="font-size: 152%;">Question : <strong id="questionNumber">1 of 20 </strong></div>
@@ -60,7 +75,7 @@
                     <img src="public/assets/question_ans_img/<%=data[0].ques_image_name%>" id="img_ques" alt="">
                 </div>
             </div>
-    </div>
+    </div> -->
 </div>
     <div class="card-header pd-0">
         <h4 class="sub-title m-b">Answers</h4>
@@ -182,14 +197,15 @@
 
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
+  <div class="modal fade" id="myModal" role="dialog" data-backdrop="static">
         <div class="modal-dialog">
         
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
+             
               <h4 class="modal-title">Test Instructions</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="list">
