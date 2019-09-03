@@ -22,5 +22,8 @@ app.get('/send_mail',(req,res)=>{
     let helper_obj = new helper()
     helper_obj.send_mail(req,res);
 })
+app.get('/Disclaimer',(req,res)=>{
+    res.render('user/views/Disclaimer/Disclaimer.ejs');
+})
 
 module.exports = app;
