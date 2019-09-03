@@ -299,3 +299,9 @@ p#question {
 #modal-dialog{
     max-width: 1000px !important;
 }
+.mr-top-0{
+    margin-top: 0px;
+}
+#carousel-inner{
+    height: 482px;
+}
