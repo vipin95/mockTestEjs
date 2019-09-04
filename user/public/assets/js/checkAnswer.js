@@ -26,12 +26,12 @@ function checkAnswer(question,answer,qNumber,data){
                     
                     localStorage.setItem('currect_ans',(parseInt(currectAnsStr)+1));
                 }
-                alert('right answer');
+                // alert('right answer');
             }
             else{
                 
                 obj = {question:question,choosed:answer,answerStatus:false,answer:data[i].answer};            
-                alert('wrong answer');
+                // alert('wrong answer');
             }
             array.push(obj);
             localStorage.setItem("quizResult", JSON.stringify(array));
