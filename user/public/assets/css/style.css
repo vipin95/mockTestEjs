@@ -305,3 +305,9 @@ p#question {
 #carousel-inner{
     height: 482px;
 }
+.bdr-rds{
+    border-radius: 30px;
+}
+.text-align{
+    text-align: center;
+}

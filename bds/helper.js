@@ -123,6 +123,30 @@ class helper {
             res.send({statusCode:"0",mess:error.message,sendBy:"e"});
         })
     }
+    getQuestionsSet_show(res){
+        let obj={};
+        return dbs().then((connection_obj)=>{
+            return connection_obj.getData(obj);
+        }).then((result)=>{
+            res.render('admin/views/question/table.ejs',{data:result});
+        }).catch((error)=>{
+            console.log(error);
+            res.send({statusCode:"0",mess:error.message,sendBy:"e"});
+        })
+    }
+    getDataForEditQues(res,id){
+
+        let obj = {_id:ObjectId(id)}
+
+        return dbs().then((connection_obj)=>{
+            return connection_obj.getData(obj);
+        }).then((result)=>{
+            res.render('admin/views/question/edit_question.ejs',{data:result});
+        }).catch((error)=>{
+            console.log(error);
+            res.send({statusCode:"0",mess:error.message,sendBy:"e"});
+        })
+    }
     //////////////////////////////////////////  END  /////////////////////////////////////////
     
     edit_questions(res,obj){
@@ -147,19 +171,6 @@ class helper {
             let str = JSON.stringify(result.length/20);
             let set_number = parseInt(str.split('.'));
             res.render('user/views/admin/admin.ejs',{set_number:set_number+1});
-        }).catch((error)=>{
-            console.log(error);
-            res.send({statusCode:"0",mess:error.message,sendBy:"e"});
-        })
-    }
-    getQuestionsSet_show(res){
-        let obj={};
-        return dbs().then((connection_obj)=>{
-            return connection_obj.getData(obj);
-        }).then((result)=>{
-            // console.log(result);
-            // res.render('user/views/admin/questions_table.ejs');
-            res.render('user/views/admin/questions_table.ejs',{data:result});
         }).catch((error)=>{
             console.log(error);
             res.send({statusCode:"0",mess:error.message,sendBy:"e"});
