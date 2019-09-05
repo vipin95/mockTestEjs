@@ -29,6 +29,8 @@
                     </div>
                     <div class="card-block">
                         <form action="/admin/edit_question/req" enctype="multipart/form-data" method="POST">
+                            
+                            <input hidden name="id" type="text" value="<%=data[0]._id%>">
                             <div class="form-group row">
                                 <div class="col-sm-2">
                                     <h4> Question : </h4>
@@ -58,9 +60,9 @@
                                         <div class="card-header pd-left-0 pd-right-0 pd-top-0">
                                             <div class="funkyradio-success">
                                                 <%if(data[0].answer === data[0].option1 ){%>
-                                                    <input type="radio" checked name="answer" class="radio_button_cls"  id="radio1">
+                                                    <input type="radio" checked name="answer" value="<%=data[0].option1%>" class="radio_button_cls"  id="radio1">
                                                 <%} else{%>
-                                                    <input type="radio" name="answer" class="radio_button_cls"  id="radio1">
+                                                    <input value="<%=data[0].option1%>" type="radio" name="answer" class="radio_button_cls"  id="radio1">
                                                 <%}%>
                                                 <label for="radio1">
                                                     <span>
@@ -69,7 +71,7 @@
                                                                     <span class="radio_test">
                                                                         <div class="row">
                                                                             <div class="col-md-7 pd-right-0">
-                                                                                <input type="text" title="<%=data[0].option1%>" value="<%=data[0].option1%>" required class="form-control input-add-q-high pd-right-0" onkeyup="assignValue(this,'radio1');" name="option1" autocomplete="off" placeholder="Enter Answer">
+                                                                                <input type="text" title="<%=data[0].option1%>" onkeyup="assignValue(this,'radio1');" value="<%=data[0].option1%>" required class="form-control input-add-q-high pd-right-0" onkeyup="assignValue(this,'radio1');" name="option1" autocomplete="off" placeholder="Enter Answer">
                                                                             </div>
                                                                             <div class="col-md-2 pd-left-0">
                                                                                     <input type="file" name="img2" onchange="printImg('radio11','img-div-ans1');" id="radio11" style="display: none" size="60" >
@@ -93,9 +95,9 @@
                                             </div>
                                             <div class="funkyradio-success">
                                                 <%if(data[0].answer === data[0].option2 ){%>
-                                                    <input type="radio" name="answer" checked class="radio_button_cls" value="2" id="radio2">
+                                                    <input type="radio" name="answer" checked class="radio_button_cls" value="<%=data[0].option2%>" id="radio2">
                                                 <%} else{%>
-                                                    <input type="radio" name="answer" class="radio_button_cls" value="2" id="radio2">
+                                                    <input type="radio" name="answer" class="radio_button_cls" value="<%=data[0].option2%>" id="radio2">
                                                 <%}%>
                                                 <label for="radio2">
                                                     <span>
@@ -104,7 +106,7 @@
                                                                     <span class="radio_test">
                                                                         <div class="row">
                                                                             <div class="col-md-7 pd-right-0">
-                                                                                <input type="text" title="<%=data[0].option2%>" value="<%=data[0].option2%>" required class="form-control input-add-q-high pd-right-0" onkeyup="assignValue(this,'radio2');" name="option2" autocomplete="off" placeholder="Enter Answer">
+                                                                                <input type="text" onkeyup="assignValue(this,'radio2');" title="<%=data[0].option2%>" value="<%=data[0].option2%>" required class="form-control input-add-q-high pd-right-0" onkeyup="assignValue(this,'radio2');" name="option2" autocomplete="off" placeholder="Enter Answer">
                                                                             </div>
                                                                             <div class="col-md-2 pd-left-0">
                                                                                     <input type="file" name="img3" id="radio22" onchange="printImg('radio22','img-div-ans2')" style="display: none" size="60" >
@@ -128,9 +130,9 @@
                                             </div>
                                             <div class="funkyradio-success">
                                                 <%if(data[0].answer === data[0].option3 ){%>
-                                                    <input type="radio" name="answer" checked class="radio_button_cls" value="3" id="radio3">
+                                                    <input type="radio" name="answer" checked class="radio_button_cls" value="<%=data[0].option3%>" id="radio3">
                                                 <%} else{%>
-                                                    <input type="radio" name="answer" class="radio_button_cls" value="3" id="radio3">
+                                                    <input type="radio" name="answer" class="radio_button_cls" value="<%=data[0].option3%>" id="radio3">
                                                 <%}%>
                                                 <label for="radio3">
                                                     <span>
@@ -139,7 +141,7 @@
                                                                     <span class="radio_test">
                                                                         <div class="row">
                                                                             <div class="col-md-7 pd-right-0">
-                                                                                <input type="text" title="<%=data[0].option3%>" value="<%=data[0].option3%>" required class="form-control input-add-q-high pd-right-0" name="option3" onkeyup="assignValue(this,'radio3');"  autocomplete="off" placeholder="Enter Answer">
+                                                                                <input type="text" onkeyup="assignValue(this,'radio3');" title="<%=data[0].option3%>" value="<%=data[0].option3%>" required class="form-control input-add-q-high pd-right-0" name="option3" onkeyup="assignValue(this,'radio3');"  autocomplete="off" placeholder="Enter Answer">
                                                                             </div>
                                                                             <div class="col-md-2 pd-left-0">
                                                                                     <input type="file" name="img4" id="radio33" onchange="printImg('radio33','img-div-ans3')" style="display: none" size="60" >
@@ -163,9 +165,9 @@
                                             </div>
                                             <div class="funkyradio-success">
                                                 <%if(data[0].answer === data[0].option4 ){%>
-                                                    <input type="radio" value="4" checked name="answer" id="radio4" class="radio_button_cls" >
+                                                    <input type="radio" value=<%=data[0].option4%> checked name="answer" id="radio4" class="radio_button_cls" >
                                                 <%} else{%>
-                                                    <input type="radio" value="4" name="answer" id="radio4" class="radio_button_cls" >
+                                                    <input type="radio" value=<%=data[0].option4%> name="answer" id="radio4" class="radio_button_cls" >
                                                 <%}%>
                                                 <label for="radio4">
                                                     <span>
@@ -174,7 +176,7 @@
                                                                     <span class="radio_test">
                                                                         <div class="row">
                                                                             <div class="col-md-7 pd-right-0">
-                                                                                <input type="text" title="<%=data[0].option4%>" value="<%=data[0].option4%>" required onkeyup="assignValue(this,'radio4');" class="form-control input-add-q-high pd-right-0" value="none of above" name="option4"  autocomplete="off" placeholder="Enter Answer">
+                                                                                <input type="text" onkeyup="assignValue(this,'radio4');" title="<%=data[0].option4%>" value="<%=data[0].option4%>" required onkeyup="assignValue(this,'radio4');" class="form-control input-add-q-high pd-right-0" value="none of above" name="option4"  autocomplete="off" placeholder="Enter Answer">
                                                                             </div>
                                                                             <div class="col-md-2 pd-left-0">
                                                                                     <input type="file" name="img5" id="radio44" onchange="printImg('radio44','img-div-ans4')" style="display: none" size="60" >

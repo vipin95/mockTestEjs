@@ -147,22 +147,22 @@ class helper {
             res.send({statusCode:"0",mess:error.message,sendBy:"e"});
         })
     }
-    //////////////////////////////////////////  END  /////////////////////////////////////////
-    
-    edit_questions(res,obj){
-        let query = {_id:ObjectId(obj._id)};
-        let remove_id = {"question":obj.question ,"option0":obj.option0 ,"option1":obj.option1 ,"option2":obj.option2 ,"option3":obj.option3 ,"answer":obj.answer}
-        let set = { $set: remove_id };
+    edit_questions(res,obj,id){
+        let where = {_id:ObjectId(obj.id)};
+        delete obj.id;
+        console.log(obj);
+        let set = { $set: obj };
         
         return dbs().then((connection_obj)=>{
-            return connection_obj.updateData(query,set);
+            return connection_obj.updateData(where,set);
         }).then((result)=>{
-            res.send({statusCode:"1",mess:"done",sendBy:"u"});
+            res.redirect('/admin/question/table');
         }).catch((error)=>{
             console.log(error);
-            res.send({statusCode:"0",mess:error.message,sendBy:"e"});
         })
     }
+    //////////////////////////////////////////  END  /////////////////////////////////////////
+    
     render_Admin_Add_Quetions_Page_With_set_number(res){
         let obj={};
         return dbs().then((connection_obj)=>{
@@ -181,7 +181,12 @@ class helper {
         return dbs().then((connection_obj)=>{
             return connection_obj.deleteData(obj);
         }).then((result)=>{
-            // console.log(result);
+            // fs.unlink('./user/public/assets/question_ans_img/',function(error){
+            //     if(error){
+            //         throw error;
+            //     }
+            //     console.log("done");
+            // });
             res.send({statusCode:"1",mess:"done",sendBy:"u"});
         }).catch((error)=>{
             console.log(error);
