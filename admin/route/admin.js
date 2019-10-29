@@ -73,6 +73,7 @@ app.post('/add_question',auth,(req,res)=>{
     });
 })
 app.post('/edit_question/req',auth,(req,res)=>{
+
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
         
@@ -110,5 +111,13 @@ app.post('/edit_question/req',auth,(req,res)=>{
         helper_obj.edit_questions(res,fields);
     });
 })
-
+app.get('/abc',(req,res)=>{
+    var data = {
+        "items": [
+          { "id": 1, "name": "Apples",  "price": "$2" },
+          { "id": 2, "name": "Peaches", "price": "$5" }
+        ] 
+      }
+    res.send({ "id": 1, "name": "Apples",  "price": "$2" }).end();
+})
 module.exports = app;

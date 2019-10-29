@@ -26,5 +26,4 @@ app.use('/',root);
 app.use('/test',test);
 app.use('/doc',doc);
 app.use('/admin',urlencodedParser,admin);
-
 app.listen(port,()=>console.log("Server running on Port 127.0.0.1:"+port));
