@@ -311,3 +311,7 @@ p#question {
 .text-align{
     text-align: center;
 }
+.margin-set {
+    margin: 0% 10% auto;
+    margin-top: 30px;
+}
