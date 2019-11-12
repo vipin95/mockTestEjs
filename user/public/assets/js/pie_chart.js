@@ -1,5 +1,5 @@
-function pie_chart(correct,incorrect) {
-
+function pie_chart(correct,incorrect,totelQues) {
+    console.log(parseInt(totelQues)+"fdf");
     var chart = new CanvasJS.Chart("chartContainer", {  
         animationEnabled: true,
         data: [{
@@ -8,8 +8,10 @@ function pie_chart(correct,incorrect) {
             yValueFormatString: "##0.00\"%\"",
             indexLabel: "{label} {y}",
             dataPoints: [
-                {y: correct*5, label: "Correct"},
-                {y: incorrect*5, label: "Incorrect"}
+                {y: (correct*100/totelQues), label: "Correct"},
+                {y: (incorrect*100/totelQues), label: "Incorrect"}
+                // {y: 10.5, label: "Correct"},
+                // {y: 80.5, label: "Incorrect"}
             ]
         }]
     });

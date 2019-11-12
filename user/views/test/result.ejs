@@ -31,6 +31,7 @@
                         <% if(data.correct < 16){%>
                             <h1 class="result_message_fail">Batter luck next time</h1>
                         <%}%>
+                        
                     </div>
                     <div  id="content">
                         <div class="card-block">
@@ -60,5 +61,5 @@
      </div>
     </div>
     <script type="text/javascript">
-        pie_chart('<%= data.correct %>','<%= data.incorrect %>');
+        pie_chart('<%= data.correct %>','<%= data.incorrect %>','<%= data.totelQues %>');
     </script>
